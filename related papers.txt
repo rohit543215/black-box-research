@@ -1,0 +1,45 @@
+Let me search for the most relevant and accessible papers for you.Here's a clean reading list organized by what you should read first — start to finish.
+
+---
+
+## Start Here (Understand the Basics)
+
+**1. "Why Should I Trust You?" — Ribeiro et al., 2016**
+The original LIME paper. Readable, well-motivated, explains the core idea clearly. Find it on arXiv (search "Ribeiro LIME 2016").
+
+**2. "A Unified Approach to Interpreting Model Predictions" — Lundberg & Lee, 2017**
+The original SHAP paper. Slightly more math-heavy but still accessible. On arXiv (search "Lundberg SHAP 2017").
+
+**3. Interpretable Machine Learning Book — Christoph Molnar**
+Free online at `christophm.github.io/interpretable-ml-book`. Read the LIME and SHAP chapters first. This is the best beginner-friendly resource in the field, period.
+
+---
+
+## Understand the Weaknesses (This is Where Your Research Starts)
+
+**4. "On the Robustness of Interpretability Methods" — Alvarez-Melis & Jaakkola, 2018**
+Shows that small input changes cause large explanation changes — the instability problem. This is a core gap you could work on. arXiv:1806.08049.
+
+**5. "Fooling LIME and SHAP" — Slack et al., 2020**
+Shows how both methods can be manipulated. Eye-opening paper that reveals faithfulness issues. Search "Fooling LIME SHAP Slack 2020".
+
+**6. "A Perspective on Explainable AI: SHAP and LIME" — Salih et al., 2024**
+A recent, balanced comparison of both methods with clear discussion of their weaknesses. arXiv:2305.02012. Very readable.
+
+---
+
+## Go Deeper (Once You've Picked Your Gap)
+
+**7. "Sanity Checks for Saliency Maps" — Adebayo et al., 2018**
+Questions whether popular explanation methods actually reflect model behavior. NeurIPS 2018.
+
+**8. "Benchmarking Attribution Methods with Relative Feature Importance" — Yang & Kim, 2019**
+Gives you a framework for evaluating explanation quality — directly useful for your experiments section.
+
+---
+
+## Reading Order
+
+Molnar book → LIME paper → SHAP paper → Alvarez-Melis → Slack et al. → Salih et al. → then the benchmarking papers once you're designing your method.
+
+That's honestly enough to write a solid literature review and identify a gap. Don't try to read 40 papers before starting — these 8 will give you 80% of what you need.
