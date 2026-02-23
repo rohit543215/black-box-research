@@ -1,0 +1,50 @@
+# XAI Research Roadmap: Making Black-Box Models Interpretable
+
+## The Core Goal
+Identify a specific weakness in how we currently explain black-box models (SHAP/LIME), design a fix, prove it works, and publish it.
+
+
+
+## Month 1 — Build the Foundation
+
+Understand the math before touching code. Focus on three things: Shapley values from cooperative game theory, how LIME constructs local surrogate models, and what faithfulness and stability formally mean. Read the original SHAP paper (Lundberg & Lee, 2017) and LIME paper (Ribeiro et al., 2016) carefully.
+
+Also study the four core axioms of feature attribution — efficiency, symmetry, dummy, additivity. If you can't derive why SHAP satisfies them, you don't understand it deeply enough yet.
+
+---
+
+## Month 2 — Literature Review
+
+Read 25–30 papers from NeurIPS, ICML, ICLR, and arXiv (last 3 years). Keep a simple spreadsheet as you go:
+
+| Paper | Method | Dataset | Weakness |
+
+That last column is everything. Your entire research contribution will come from patterns you notice in what existing methods fail to do. Don't skip this step or rush it.
+
+---
+
+## Month 3 — Find Your Gap and Design Your Method
+
+Common gaps worth exploring: SHAP explanations are unstable under small input noise, LIME is highly sensitive to hyperparameter choices, both methods are extremely slow on Transformers, and neither handles feature interactions well.
+
+Pick one gap, convert it into a single research question — something like *"Can we regularize model training to produce more stable post-hoc explanations?"* — and design a method around it. Keep the method simple and well-motivated. One solid idea executed rigorously beats three half-baked ones.
+
+---
+
+## Month 4–5 — Experiments
+
+Train baseline black-box models: LSTM, Transformer, and XGBoost as a tree-based comparison. Use standard benchmark datasets — UCI repository, tabular classification tasks, or any domain-relevant dataset with enough samples.
+
+Apply standard SHAP/LIME first and measure stability, faithfulness, and runtime. Then apply your method and compare. Use proper metrics: stability score, faithfulness correlation, deletion/insertion tests. If you improve even one metric meaningfully and consistently across datasets, that's a publishable result.
+
+---
+
+## Month 6 — Write and Submit
+
+Target **Expert Systems with Applications** or **IEEE Access** for a realistic first publication. Follow the standard structure: Introduction → Related Work → Method → Experiments → Results → Limitations → Conclusion. Write the Limitations section seriously — reviewers respect papers that know their own boundaries.
+
+---
+
+## The Honest Truth
+
+The literature review in Month 2 is the hardest part and where most people give up or go shallow. Everything else — method design, experiments, writing — becomes straightforward once you have a crisp, well-evidenced gap. Spend real time there.
